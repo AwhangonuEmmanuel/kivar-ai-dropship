@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kivar AI Dropship</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="logo">KIVAR <span>AI</span></div>
+  <button class="menu" onclick="toggleMenu()">☰</button>
+</header>
+
+<div class="layout">
+
+  <aside id="sidebar">
+    <button onclick="showPage('dashboard')">🏠 Dashboard</button>
+    <button onclick="showPage('products')">🔎 Product Finder</button>
+    <button onclick="showPage('analyzer')">🤖 AI Analyzer</button>
+    <button onclick="showPage('writer')">✍️ AI Writer</button>
+    <button onclick="showPage('calculator')">💰 Profit Calculator</button>
+    <button onclick="showPage('orders')">📦 Orders</button>
+  </aside>
+
+  <main>
+
+    <section id="dashboard" class="page active">
+      <h1>Welcome to Kivar AI 👋</h1>
+      <p class="subtitle">Your AI-powered dropshipping command center.</p>
+
+      <div class="stats">
+        <div class="card">
+          <span>🔥 Products</span>
+          <strong id="productCount">0</strong>
+        </div>
+
+        <div class="card">
+          <span>📦 Orders</span>
+          <strong id="orderCount">0</strong>
+        </div>
+
+        <div class="card">
+          <span>💰 Revenue</span>
+          <strong>$0</strong>
+        </div>
+
+        <div class="card">
+          <span>📈 Profit</span>
+          <strong>$0</strong>
+        </div>
+      </div>
+
+      <div class="hero">
+        <div>
+          <h2>Find products. Analyze them. Sell them.</h2>
+          <p>
+            Kivar AI helps you discover products, calculate profit,
+            and create product listings.
+          </p>
+          <button class="primary" onclick="showPage('products')">
+            Find Products →
+          </button>
+        </div>
+
+        <div class="robot">🤖</div>
+      </div>
+    </section>
+
+
+    <section id="products" class="page">
+      <h1>🔥 Product Finder</h1>
+      <p class="subtitle">Products available in your Kivar catalog.</p>
+
+      <div id="productList" class="product-grid">
+        Loading products...
+      </div>
+    </section>
+
+
+    <section id="analyzer" class="page">
+      <h1>🤖 AI Product Analyzer</h1>
+      <p class="subtitle">
+        Check the estimated profit potential of a product.
+      </p>
+
+      <div class="tool">
+
+        <input id="productName" placeholder="Product name">
+
+        <input
+          id="productCost"
+          type="number"
+          placeholder="Supplier cost"
+        >
+
+        <input
+          id="productPrice"
+          type="number"
+          placeholder="Selling price"
+        >
+
+        <button class="primary" onclick="analyzeProduct()">
+          Analyze Product
+        </button>
+
+        <div id="analysisResult"></div>
+
+      </div>
+    </section>
+
+
+    <section id="writer" class="page">
+      <h1>✍️ AI Product Writer</h1>
+      <p class="subtitle">
+        Generate a product listing for your store.
+      </p>
+
+      <div class="tool">
+
+        <input
+          id="writerName"
+          placeholder="Product name"
+        >
+
+        <input
+          id="writerCategory"
+          placeholder="Product category"
+        >
+
+        <button class="primary" onclick="generateDescription()">
+          Generate Listing
+        </button>
+
+        <div id="writerResult"></div>
+
+      </div>
+    </section>
+
+
+    <section id="calculator" class="page">
+      <h1>💰 Profit Calculator</h1>
+      <p class="subtitle">
+        Calculate your estimated profit after advertising costs.
+      </p>
+
+      <div class="tool">
+
+        <input
+          id="calcCost"
+          type="number"
+          placeholder="Supplier cost"
+        >
+
+        <input
+          id="calcPrice"
+          type="number"
+          placeholder="Selling price"
+        >
+
+        <input
+          id="calcAds"
+          type="number"
+          placeholder="Advertising cost"
+        >
+
+        <button class="primary" onclick="calculateProfit()">
+          Calculate Profit
+        </button>
+
+        <div id="calcResult"></div>
+
+      </div>
+    </section>
+
+
+    <section id="orders" class="page">
+      <h1>📦 Orders</h1>
+      <p class="subtitle">Your latest orders.</p>
+
+      <div id="ordersList">
+        Loading orders...
+      </div>
+    </section>
+
+  </main>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
